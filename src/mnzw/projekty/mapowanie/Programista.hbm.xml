@@ -1,14 +1,17 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2014-10-23 10:21:19 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <subclass name="mnzw.projekty.model.Programista" extends="mnzw.projekty.model.Osoba" discriminator-value="Programista" lazy="false">      
-        <set name="jezyki" table="JEZYKI" inverse="false" lazy="true" access="field">
-            <key foreign-key="FK_JEZYKI_PROGRAMISTA">
-            	<column name="PROGRAMISTA_ID"/>
-            </key>
-            <one-to-many class="mnzw.projekty.model.Jezyki" />
-        </set>
-    </subclass>
+ <subclass discriminator-value="Programista"
+  extends="mnzw.projekty.model.Osoba" lazy="false"
+  name="mnzw.projekty.model.Programista" select-before-update="false">
+  <set access="field" cascade="save-update" lazy="true" name="jezyki"
+   sort="unsorted" table="JEZYKI">
+   <key foreign-key="FK_JEZYKI_PROGRAMISTA">
+    <column name="PROGRAMISTA_ID"/>
+   </key>
+   <one-to-many class="mnzw.projekty.model.Jezyki"/>
+  </set>
+ </subclass>
 </hibernate-mapping>

@@ -20,13 +20,13 @@
         <many-to-one name="kierownik" class="mnzw.projekty.model.Kierownik" access="field" fetch="join" foreign-key="FK_PROJEKT_KIEROWNIK">
             <column name="KIEROWNIK_ID" />
         </many-to-one>
-        <set name="zatrudnieni" table="ZATRUDNIENIE" inverse="false" lazy="true" access="field">
+        <set name="zatrudnieni" table="ZATRUDNIENIE" inverse="false" lazy="true" access="field" cascade="save-update">
             <key foreign-key="FK_ZATRUDNIENI_PROJEKT">
                 <column name="PROJEKT_ID" />
             </key>
             <one-to-many class="mnzw.projekty.model.Zatrudnienie" />
         </set>
-       <set name="zapotrzebowanie" table="ZAPOTRZEBOWANIE" inverse="false" lazy="true" access="field">
+       <set name="zapotrzebowanie" table="ZAPOTRZEBOWANIE" inverse="false" lazy="true" access="field" cascade="save-update">
             <key foreign-key="FK_ZAPOTRZEBOWANIE_PROJEKT">
                 <column name="PROJEKT_ID" />
             </key>
