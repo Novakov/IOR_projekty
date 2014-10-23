@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-10-23 10:21:19 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="mnzw.projekty.model.JezykProgramowania" table="JEZYKPROGRAMOWANIA">
+        <id name="id" type="int" access="field">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="nazwa" type="java.lang.String" access="field">
+            <column name="NAZWA" />
+        </property>
+    </class>
+</hibernate-mapping>

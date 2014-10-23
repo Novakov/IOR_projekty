@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-10-23 10:21:19 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="mnzw.projekty.model.Projekt" table="PROJEKT">
+        <id name="id" type="int" access="field">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="nazwa" type="java.lang.String" access="field">
+            <column name="NAZWA" />
+        </property>
+        <property name="dataPoczatku" type="java.util.GregorianCalendar" access="field">
+            <column name="DATAPOCZATKU" />
+        </property>
+        <property name="dataKonca" type="java.util.GregorianCalendar" access="field">
+            <column name="DATAKONCA" />
+        </property>
+        <many-to-one name="kierownik" class="mnzw.projekty.model.Kierownik" access="field" fetch="join" foreign-key="FK_PROJEKT_KIEROWNIK">
+            <column name="KIEROWNIK_ID" />
+        </many-to-one>
+        <set name="zatrudnieni" table="ZATRUDNIENIE" inverse="false" lazy="true" access="field">
+            <key foreign-key="FK_ZATRUDNIENI_PROJEKT">
+                <column name="PROJEKT_ID" />
+            </key>
+            <one-to-many class="mnzw.projekty.model.Zatrudnienie" />
+        </set>
+       <set name="zapotrzebowanie" table="ZAPOTRZEBOWANIE" inverse="false" lazy="true" access="field">
+            <key foreign-key="FK_ZAPOTRZEBOWANIE_PROJEKT">
+                <column name="PROJEKT_ID" />
+            </key>
+            <one-to-many class="mnzw.projekty.model.Zapotrzebowanie" />
+        </set>    
+    </class>
+</hibernate-mapping>

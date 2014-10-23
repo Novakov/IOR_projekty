@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-10-23 10:21:19 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="mnzw.projekty.model.Jezyki" table="JEZYKI">
+		<id type="int" column="ID">
+			<generator class="native"></generator>
+		</id>
+		<many-to-one access="field"
+			class="mnzw.projekty.model.JezykProgramowania" fetch="join" name="jezyk" foreign-key="FK_JEZYKI_JEZYK">
+			<column name="JEZYK_ID" />
+		</many-to-one>
+		<property access="field" generated="never" lazy="false"
+			name="stopienZnajomosci" type="int">
+			<column name="STOPIENZNAJOMOSCI" />
+		</property>
+		<property access="field" generated="never" lazy="false" name="uwagi"
+			type="int">
+			<column name="UWAGI" />
+		</property>		
+	</class>
+</hibernate-mapping>
