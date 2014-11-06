@@ -5,6 +5,10 @@ public abstract class Osoba {
 	private String imie;
 	private String nazwisko;
 	
+	protected Osoba(){
+		
+	}
+	
 	public Osoba(String imie, String nazwisko) {
 		super();
 		this.imie = imie;

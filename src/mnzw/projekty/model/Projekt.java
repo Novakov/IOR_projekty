@@ -13,6 +13,10 @@ public class Projekt {
 	private Set<Zatrudnienie> zatrudnieni = new HashSet<>();	
 	private Set<Zapotrzebowanie> zapotrzebowanie = new HashSet<>();
 
+	protected Projekt(){
+		
+	}
+	
 	public Projekt(String nazwa, GregorianCalendar dataPoczatku, GregorianCalendar dataKonca, Kierownik kierownik) {
 		super();
 		this.nazwa = nazwa;

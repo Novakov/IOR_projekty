@@ -5,6 +5,10 @@ public class Jezyki {
 	private int stopienZnajomosci;
 	private int uwagi;
 	
+	protected Jezyki(){
+		
+	}
+	
 	public Jezyki(JezykProgramowania jezyk, int stopienZnajomosci, int uwagi) {
 		super();
 		this.jezyk = jezyk;

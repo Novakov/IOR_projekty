@@ -6,6 +6,10 @@ import java.util.Set;
 public class Programista extends Osoba {
 	private Set<Jezyki> jezyki = new HashSet<Jezyki>();
 	
+	protected Programista(){
+		
+	}
+	
 	public Programista(String imie, String nazwisko) {
 		super(imie, nazwisko);
 	}
