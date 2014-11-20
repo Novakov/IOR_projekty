@@ -1,7 +1,25 @@
 package mnzw.projekty.model;
 
-public class Jezyki {	
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "JEZYKI")
+public class Jezyki {
+	@Id
+	@GeneratedValue	
+	private int id;
+	
+	@ManyToOne
+	@JoinColumn(name = "JEZYK_ID", foreignKey = @javax.persistence.ForeignKey(name = "FK_JEZYKI_JEZYK"))
+	
 	private JezykProgramowania jezyk;
+	
 	private int stopienZnajomosci;
 	private int uwagi;
 	

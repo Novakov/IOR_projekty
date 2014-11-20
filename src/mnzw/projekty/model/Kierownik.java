@@ -1,5 +1,10 @@
 package mnzw.projekty.model;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+@Entity
+@DiscriminatorValue("kierownik")
 public class Kierownik extends Osoba {
 
 	protected Kierownik(){

@@ -26,9 +26,9 @@ public class Program {
 	private static Transaction transaction;
 
 	public static void main(String[] args) {
-		SessionFactory sessionFactory = HiberUtil.getSessionFactory(Mapping.XML);
+		SessionFactory sessionFactory = HiberUtil.getSessionFactory(Mapping.ANN);
 
-		insertSampleData(sessionFactory);
+		//insertSampleData(sessionFactory);
 		
 		session = sessionFactory.openSession();
 		
